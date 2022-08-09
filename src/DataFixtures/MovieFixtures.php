@@ -15,6 +15,11 @@ class MovieFixtures extends Fixture
         $movie->setReleaseYear(2008);
         $movie->setDescription("The Description");
         $movie->setImagePath("https://prawie.pro/wp-content/uploads/2017/10/76140090_pedaly-spd-pd-m540-czarne-bloki-shimano_712x534_TRS_pad-300x225.png");
+        
+        
+        $movie->addActor($this->getReference('actor_1'));
+        $movie->addActor($this->getReference('actor_2'));
+       
         $manager->persist($movie);
 
 
@@ -23,8 +28,13 @@ class MovieFixtures extends Fixture
         $movie2->setReleaseYear(2009);
         $movie2->setDescription("The Description 2");
         $movie2->setImagePath("https://prawie.pro/wp-content/uploads/2017/10/76140090_pedaly-spd-pd-m540-czarne-bloki-shimano_712x534_TRS_pad-300x225.png");
+        
+        $movie2->addActor($this->getReference('actor_3'));
+        $movie2->addActor($this->getReference('actor_4'));
+        
         $manager->persist($movie2);
 
         $manager->flush();
+
     }
 }
