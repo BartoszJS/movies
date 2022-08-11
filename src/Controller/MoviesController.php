@@ -85,7 +85,7 @@ class MoviesController extends AbstractController
                 if($movie->getImagePath() !== null){
                     if(file_exists($this->getParameter('kernel.project_dir').$movie->getImagePath())){
                         $this->getParameter('kernel.project_dir').$movie->getImagePath();
-
+                    }
                         $newFileName = uniqid() . '.' . $imagePath->guessExtension();
 
                         try{
@@ -104,7 +104,7 @@ class MoviesController extends AbstractController
                         return $this->redirectToRoute('movies');
                         
                     }
-                }
+                
             } else {
                
                 $movie->setTitle($form->get('title')->getData());
